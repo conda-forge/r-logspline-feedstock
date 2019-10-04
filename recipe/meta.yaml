@@ -1,4 +1,4 @@
-{% set version = '2.1.13' %}
+{% set version = "2.1.14" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/logspline_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/logspline/logspline_{{ version }}.tar.gz
-  sha256: f0a9667da192ce5b6cff02dd5c0bfa21ce2a28e50ca297057f2a437ef2101bd6
+  sha256: 2a1e8efc2a5ecc0cdc80c114f33fefbf093b427afc0bdeef13c41669080eaa17
 
 build:
   merge_build_host: True  # [win]
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
