@@ -1,4 +1,4 @@
-{% set version = "2.1.21" %}
+{% set version = "2.1.22" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/logspline_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/logspline/logspline_{{ version }}.tar.gz
-  sha256: 8e3a3cf11f3261f010092aa657d938a69b604818afc123151c7d3e24e0980b77
+  sha256: 773af7a2f12bce0eac30a036bd61bafd9a2b0eb083e377f4ef4e5518a463ed02
 
 build:
   merge_build_host: true  # [win]
@@ -22,7 +22,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('fortran') }}        # [not win]
     - {{ compiler('m2w64_fortran') }}  # [win]
     - {{ posix }}filesystem        # [win]
